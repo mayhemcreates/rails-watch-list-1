@@ -1,9 +1,21 @@
 <div class="container">
   <%= @list.name %>
-  <ul>
-  <li> <%= @movie.title %>
-      
-  </li>
 
-  <ul>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-2 mb-4 height-100">
+        <div class="card-movie">
+          <img src ="<%= src=movie.poster_url %>">
+            <div class="card-movie-infos">
+              <% if movie.title.include?(' ')  %>
+                <% movie.title = movie.title.gsub(/\W/, ' Cat ') %>
+              <% else %>
+                <% movie.title = movie.title.gsub(/\z/, ' Cat ') %>
+              <% end %>
+              <h2><%= movie.title %></h2>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

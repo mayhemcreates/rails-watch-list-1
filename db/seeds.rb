@@ -10,19 +10,36 @@ require 'json'
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database..."
 Movie.destroy_all
+List.destroy_all
 
 puts "adding Movies"
-wonder_woman = {title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9}
-shawshank_redemption = {title: "The Shawshank Redemption", overview: "Framed in the 1940s for double murder, upstanding banker Andy Dufresne begins a new life at the Shawshank prison", poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7}
-titanic = {title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9}
-oceans_eight = {title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0}
 
-[wonder_woman, shawshank_redemption, titanic, oceans_eight].each do |attributes|
-  movie = Movie.create!(attributes)
-  puts "Created #{movie.title}"
+url = "http://tmdb.lewagon.com/movie/top_rated"
+10.times do |i|
+  puts "Importing movies from page #{i + 1}"
+  movies = JSON.parse(URI.open("#{url}?page=#{i + 1}").read)['results']
+  movies.each do |movie|
+    puts "Creating #{movie['title']}"
+    base_poster_url = "https://image.tmdb.org/t/p/original"
+    Movie.create(
+      title: movie['title'],
+      overview: movie['overview'],
+      poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
+      rating: movie['vote_average']
+    )
+  end
 end
 
 puts "adding lists"
-scifi = List.create!(name:'sci-fi')
-action = List.create!(name:'action')
+
+cat_horror = {name: 'Cat Horror', image_url: 'https://pet-happy.com/files/up/2014/09/scared-cat.jpg' }
+cat_fantasy = {name: 'Fantasy Cat', image_url: 'https://assets.cosplaycentral.com/cat%20cosplay%20zelda.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/cat%20cosplay%20zelda.jpg' }
+cat_comedy = {name: 'Comedy Cat', image_url: 'https://i.ytimg.com/vi/317jz-PU7Mg/maxresdefault.jpg' }
+cat_sci_fi = {name: 'Cat Sci Fi', image_url: 'https://i.ytimg.com/vi/gITJEvFyl7k/hqdefault.jpg' }
+cat_documentaries = {name: 'Cat Documentaries', image_url: 'http://www.catcareofvinings.com/blog/wp-content/uploads/2017/05/CCV_iStock-619079366.jpg' }
+
+[cat_horror, cat_fantasy, cat_comedy, cat_sci_fi, cat_documentaries].each do |attributes|
+  list = List.create!(attributes)
+  puts "Created #{list.name}"
+end
 puts "Finished!"

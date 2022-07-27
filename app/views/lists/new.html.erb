@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :movies, as: :select %>
+    <%= f.submit %>
+  <% end %>
+</div>

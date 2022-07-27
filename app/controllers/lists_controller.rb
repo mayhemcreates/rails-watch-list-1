@@ -6,11 +6,12 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @movie = Movie.find(15)
+    @movies = Movie.all.sample(12)
   end
 
   def new
    @list = List.new
+   @movies = Movie.all
   end
 
   def create
@@ -27,4 +28,5 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name)
   end
+
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "lists#index"
-  resources :lists, only: [:show, :edit, :create] do
+  resources :lists, only: [:show, :edit, :new, :create] do
     resources :movies, only: [:show]
   end
 end
