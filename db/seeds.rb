@@ -37,8 +37,9 @@ cat_fantasy = { name: 'Fantasy Cat', image_url: 'https://assets.cosplaycentral.c
 cat_comedy = { name: 'Comedy Cat', image_url: 'https://i.ytimg.com/vi/317jz-PU7Mg/maxresdefault.jpg' }
 cat_sci_fi = { name: 'Cat Sci Fi', image_url: 'https://i.ytimg.com/vi/gITJEvFyl7k/hqdefault.jpg' }
 cat_documentaries = { name: 'Cat Documentaries', image_url: 'http://www.catcareofvinings.com/blog/wp-content/uploads/2017/05/CCV_iStock-619079366.jpg' }
+cat_action = { name: 'Cat Action', image_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/68a224ae-3904-4540-a1cd-fccd2133da20/dc5wmb-8f8cb34d-5c04-4e2e-ae3c-5fc38cc621d6.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY4YTIyNGFlLTM5MDQtNDU0MC1hMWNkLWZjY2QyMTMzZGEyMFwvZGM1d21iLThmOGNiMzRkLTVjMDQtNGUyZS1hZTNjLTVmYzM4Y2M2MjFkNi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.dcVhIdcubaxT1NzcJ7_QYudFMHcF96VirTByotqb1b8' }
 
-[cat_horror, cat_fantasy, cat_comedy, cat_sci_fi, cat_documentaries].each do |attributes|
+[cat_horror, cat_fantasy, cat_comedy, cat_sci_fi, cat_documentaries,cat_action].each do |attributes|
   list = List.create!(attributes)
   puts "Created #{list.name}"
 end
