@@ -9,3 +9,4 @@ window.Stimulus   = application
 export { application }
 
 import "bootstrap";
+

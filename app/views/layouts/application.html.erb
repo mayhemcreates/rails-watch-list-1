@@ -11,20 +11,19 @@
   </head>
 
   <body>
-  <div class="navbar-lewagon">
-    <div class="row">
+  <div class="navbar-lewagon sticky-top navbar-expand-md" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+    <div class="row ps-5">
       <div class="col-md-4">
         <h1> <%= link_to image_tag('catflix.png'), root_path %></h1>
-        <p>Add a cat. Ruin a film.</p>
+        <p class="tagline">Add a cat. Ruin a film.</p>
       </div>
-      <div class="col-md-6">
-        <h2><%=  %></h2>
-      </div>
-      <div class="col-md-2 d-flex align-items-top">
-      <%= link_to new_list_path do  %>
-        <i class="fa-solid fa-circle-plus" style="color:white; margin-right:10px; margin-top:5px;"></i>
-        <p style="margin: 0;">Add List</p>
-      <% end %>
+      <div class="offset-md-6 col-md-2 align-items-top text-decoration-none">
+        <%= link_to new_list_path do  %>
+          <div class="d-flex">
+            <i class="fa-solid fa-circle-plus" style="color:white; margin-right:10px; margin-top:5px;"></i>
+            <p style="margin: 0;">Add List</p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

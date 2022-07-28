@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: black;
+  transition: 0.5s background-color ease;
   padding:20px;
+  height: 150px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,4 +20,18 @@
 
 .navbar-lewagon h2 {
 color:white;
+}
+
+.navbar-lewagon-small {
+  height: 100px;
+  padding:20px;
+  background-color: black;
+}
+
+.navbar-lewagon-small img {
+  width: 100px;
+}
+
+.navbar-lewagon-small .tagline {
+  display: none;
 }

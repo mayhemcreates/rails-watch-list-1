@@ -1,9 +1,14 @@
 <div class="container">
   <%= @list.name %>
-
+  <div class = "d-flex flex-row-reverse pb-5">
+      <div class = "btn btn-primary text-gray">
+        <i class="fa-solid fa-circle-plus" style="color:$gray; margin-right:10px; margin-top:5px;"></i>
+        <%= link_to "add a cat movie", new_list_bookmark_path(@list) %>
+      </div>
+  </div>
   <div class="row">
     <% @movies.each do |movie| %>
-      <div class="col-md-2 mb-4 height-100">
+      <div class="col-md-3 mb-4 height-100">
         <div class="card-movie">
           <img src ="<%= src=movie.poster_url %>">
             <div class="card-movie-infos">

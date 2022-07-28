@@ -32,11 +32,11 @@ end
 
 puts "adding lists"
 
-cat_horror = {name: 'Cat Horror', image_url: 'https://pet-happy.com/files/up/2014/09/scared-cat.jpg' }
-cat_fantasy = {name: 'Fantasy Cat', image_url: 'https://assets.cosplaycentral.com/cat%20cosplay%20zelda.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/cat%20cosplay%20zelda.jpg' }
-cat_comedy = {name: 'Comedy Cat', image_url: 'https://i.ytimg.com/vi/317jz-PU7Mg/maxresdefault.jpg' }
-cat_sci_fi = {name: 'Cat Sci Fi', image_url: 'https://i.ytimg.com/vi/gITJEvFyl7k/hqdefault.jpg' }
-cat_documentaries = {name: 'Cat Documentaries', image_url: 'http://www.catcareofvinings.com/blog/wp-content/uploads/2017/05/CCV_iStock-619079366.jpg' }
+cat_horror = { name: 'Cat Horror', image_url: 'https://pet-happy.com/files/up/2014/09/scared-cat.jpg' }
+cat_fantasy = { name: 'Fantasy Cat', image_url: 'https://assets.cosplaycentral.com/cat%20cosplay%20zelda.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/cat%20cosplay%20zelda.jpg' }
+cat_comedy = { name: 'Comedy Cat', image_url: 'https://i.ytimg.com/vi/317jz-PU7Mg/maxresdefault.jpg' }
+cat_sci_fi = { name: 'Cat Sci Fi', image_url: 'https://i.ytimg.com/vi/gITJEvFyl7k/hqdefault.jpg' }
+cat_documentaries = { name: 'Cat Documentaries', image_url: 'http://www.catcareofvinings.com/blog/wp-content/uploads/2017/05/CCV_iStock-619079366.jpg' }
 
 [cat_horror, cat_fantasy, cat_comedy, cat_sci_fi, cat_documentaries].each do |attributes|
   list = List.create!(attributes)

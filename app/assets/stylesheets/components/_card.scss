@@ -1,7 +1,7 @@
 .card-movie {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: $light-gray;
+  box-shadow: 0 0 15px rgba(251, 251, 251, 0.2);
   height: 300px;
 }
 
@@ -26,11 +26,15 @@
   position: relative;
 }
 
+.card-movie-infos h2 {
+  color: $gray
+}
+
 .list-card {
 height: 200px;
 margin: 20px;
 padding: 10px;
-position: relative;
+position:relative;
 }
 
 .list-card h2 {
@@ -40,5 +44,4 @@ position: relative;
 }
 
 .list-card a {
-  text-decoration: none;
 }
